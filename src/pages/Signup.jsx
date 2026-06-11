@@ -15,7 +15,8 @@ function Signup() {
     try {
 
       const response = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        // "http://localhost:5000/api/auth/register",
+         "https://ai-interview-backend-1-10hi.onrender.com/api/auth/register",
         {
           name,
           email,

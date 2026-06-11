@@ -146,11 +146,15 @@ if (!role) {
   }, [role]);
 
   const generateQuestions = async () => {
+    console.log("Generate questions function called");
     try {
       setLoading(true);
 
+      console.log("Sending request...");
+
       const response = await axios.post(
-        "http://localhost:5000/api/ai/generate",
+        // "http://localhost:5000/api/ai/generate",
+         "https://ai-interview-backend-1-10hi.onrender.com/api/ai/generate",
         {
           prompt: `Generate 5 interview questions for ${role}.
           Only provide questions.
@@ -163,6 +167,7 @@ if (!role) {
           },
         }
       );
+      console.log("Response received");
 
       console.log("AI RESPONSE:", response.data);
 
