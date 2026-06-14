@@ -37,7 +37,8 @@ function Interview() {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:5000/api/ai/generate",
+        // "http://localhost:5000/api/ai/generate",
+         "https://ai-interview-backend-1-10hi.onrender.com/api/ai/generate",
         {
           prompt: `Generate 5 interview questions for ${role}.
           Only provide questions.
@@ -70,7 +71,8 @@ function Interview() {
     try {
 
       const response = await axios.post(
-        "http://localhost:5000/api/ai/evaluate",
+        // "http://localhost:5000/api/ai/evaluate",
+        "https://ai-interview-backend-1-10hi.onrender.com/api/ai/evaluate",
         {
           question: questions[currentQuestion],
           answer: answer,

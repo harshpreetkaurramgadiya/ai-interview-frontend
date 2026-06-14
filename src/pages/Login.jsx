@@ -23,7 +23,8 @@ const Login = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        // "http://localhost:5000/api/auth/login",
+         "https://ai-interview-backend-1-10hi.onrender.com/api/ai/login",
         {
           email,
           password,
