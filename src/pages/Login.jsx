@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -10,13 +10,20 @@ const Login = () => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+  const token = localStorage.getItem("token");
+
+  if (token) {
+    navigate("/home");
+  }
+}, []);
+
   const handleLogin = async () => {
 
     try {
       setLoading(true);
       const response = await axios.post(
-        // "http://localhost:5000/api/auth/login",
-        "https://ai-interview-backend-1-10hi.onrender.com/api/auth/login",
+        "http://localhost:5000/api/auth/login",
         {
           email,
           password,
